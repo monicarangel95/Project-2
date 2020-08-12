@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot-a-Show</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css">
+    <link rel="stylesheet" href="Assets/css/reset.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+      <header>
+        <section class="hero has-background-grey-light">
+          <div id="logo" class="container">
+            <h1 id="head" class="title">
+              <span id="greenText">Spot</span>
+              <span id="blackText">-a-</span>
+              <span id="whiteText">Show</span>
+            </h1>
+          </div>
+        </section>
+        <section>
+          <div id="searchBar" class="container py-3">
+            <div class="columns is-mobile is-centered">
+                <div class="column">
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <input id="artist" class="input is-rounded" type="text" placeholder="Search Your Artist">
+                        </div>
+                        <div class="control">
+                            <a id="search" class="button is-success is-rounded">
+                                Search
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>  
+        </section>
+      </header>
+      
+      <section id="lastFm" class="section">
+
+        <div class="container">
+          <div id="artistInfo" class="columns is-vcentered">
+            <div class="column">
+              <div class="notification">      
+                <div id="artistInfo" class="card has-text-centered is-wide">
+                  <header class="">
+                    <div class="card-content has-text-centered is-wide is-centered">
+                      <h1  id="artistName" class="title">Your Favourite Artist</h1>
+                      <br>
+                      <h3 class="subtitle">Genre</h3> 
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </div>
+          </div>    
+        </div>
+
+        <div class="container">
+          <div class="columns is-vcentered is-centered">
+            <div class="column is-half">
+              <div class="notification has-text-center">
+                <div class="box has-background-white">
+                  
+                    
+                      <figure class="image container is-square">
+                        <img id="artistImg" class="center" src="Assets/images/audience.jpg" alt="Photo of artist searched for.">
+                      </figure>
+                    
+                  
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <div class="notification">
+                <div class="card has-text-centered is-wide">
+                  <div class="card-content">
+                    <div id="songList" class="content is-centered">
+                      
+                      <h5 class="title">Top Tracks</h5>
+                      <br>
+                      <p id="songTitle0">Search to See the Artist's Top Songs</p>
+                      <p id="songTitle1"></p>
+                      <p id="songTitle2"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+      </section>
+      
+      <section id="bandsInTown" class="section">
+        <div class="container">
+            
+          <div id="venueShowInfo" class="columns">
+
+            <div class="column">
+              <div id="show1" class="notification has-text-centered">
+                <div class="box">
+                    <div class="card-content">
+                        <div class="content is-centered">
+                            <h5 class="title">Date</h5>
+                            <p id="time0">Search an Artist to See Upcoming Shows</p>
+                            <br>
+                            <h5 class="title">Location</h5>
+                            <p id="location0"></p>
+                            <p><a id="bandsInTownLink1" href=""></a></p>                            
+                        </div>
+                    </div>
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div id="show2" class="notification has-text-centered">
+                <div class="box">
+                    <div class="card-content">
+                        <div class="content is-centered">
+                            <h5 class="title">Date</h5>
+                            <p id="time1">Search an Artist to See Upcoming Shows</p>
+                            <br>
+                            <h5 class="title">Location</h5>
+                            <p id="location1"></p>
+                            <p><a id="bandsInTownLink2" href=""></a></p>                            
+                        </div>
+                    </div>
+
+     
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+
+              <div id="show3" class="notification has-text-centered">
+                <div class="box">
+                    <div class="card-content">
+                        <div class="content is-centered">
+                            <h5 class="title">Date</h5>
+                            <p id="time2">Search an Artist to See Upcoming Shows</p>
+                            <br>
+                            <h5 class="title">Location</h5>
+                            <p id="location2"></p>
+                            <p><a id="bandsInTownLink3" href=""></a></p>                            
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer mb has-background-light">
+        <div class="container">  
+          <div class="content has-text-centered ">
+            <p>
+              <strong>Spot-A-Show</strong> by <a href="https://github.com/rahme">Raffay Ahmed</a>, <a href="https://github.com/andrewyen64">Andrew Yen</a> and <a href="https://github.com/cmsebastian">Chris Sebastian</a>.
+            </p>
+          </div>
+        </div>
+      </footer>
+          
+  
+  
+    </div>
+  </body>
+<script src="Assets/js/script.js">
+</script>
+</body>
+</html>
