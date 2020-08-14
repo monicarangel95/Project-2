@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot-A-Show</title>
+
+    <!-- MATERIALIZE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="blue-grey "" style=" padding:0px 10px; position: fixed;">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Spot-A-Show</a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down ">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search bar begins -->
+        <div id="searchBar" class="container py-3">
+            <div class="columns is-mobile is-centered">
+                <div class="column">
+                    <nav>
+                        <div class="nav-wrapper">
+                            <form>
+                                <div class="input-field">
+                                    <input id="artist" type="search" required>
+                                    <label id="search" class="label-icon" for="search"><i
+                                            class="material-icons left hide-on-med-and-down">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Side Nav -->
+        <ul class="sidenav" id="mobile-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <script>
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+        </script>
+    </header>
+    <!-- co -->
+    <main id="lastFm" class="section">
+        <div class="container">
+            <div id="artistInfo" class="columns col s12">
+                <div class="column">
+                    <div class="notification">
+                        <div id="artistInfo" class="card col s12">
+                            <header class="">
+                                <div class="card-content center col s12">
+                                    <h3 id="artistName" class="title">Your Favorite Artist</h1>
+                                        <br>
+                                        <h4 class="subtitle">Genre
+                                    </h3>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input placeholder="Search for a Artist" id="first_name" type="text" class="validate"">
+                                <label for=" first_name">Search</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix col s4">date_range</i>
+                            <label for="from">From</label>
+                            <input placeholder="01/01/2021" id="from_date" type="text" class="validate">
+                        </div>
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix col s4">date_range</i>
+                            <input placeholder="12/31/2021" id="to_date" type="text" class="validate">
+                            <label for="to_date">To</label>
+                        </div>
+                        <button class="btn waves-effect waves-light blue-grey dark" type="search" name="action">Search
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+            </div>
+            <div class="row" style="width: auto">
+                <div class="col s5">
+
+                        <div class="card-panel">
+                            <span class="white-text">I am a very simple card.
+
+                            </span>
+                        </div>
+                </div>
+            </span>
+            <div class="col s7">
+                    <div class="card-panel">
+                        <span class="white-text">
+                            I am a very simple card. I am good at containing small bits of
+                
+                        </span>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-panel col s4">Bands
+                <!-- Promo Content 1 goes here -->
+            </div>
+            <div class="card-panel col s4">Bands
+                <!-- Promo Content 2 goes here -->
+            </div>
+            <div class="card-panel col s4"> Bands
+                <!-- Promo Content 3 goes here -->
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="page-footer blue-grey lighten-3">
+        <div class="container ">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text ">Footer Content</h5>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright blue-grey lighten-2">
+            <div class="container ">
+                © 2020 Spot-A-Show
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
