@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" link="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Spot-A-Show</title>
 </head>
-<body>
-    <!--NAV BAR COMPONENT-->
-    <nav class="flex items-center-justify-between flex-wrap bg-teal-500 p-6">
-        
-    </nav>
+<body class="antialiased bg-gray-200">
+    <header>
+        <!--NAV BAR COMPONENT-->
+        <nav class="lg:px-16 px-6 bg-blue-900 flex flex-wrap items-center lg:py-0 py-2">
+            <!-- LOGO -->
+            <div class="flex-1 flex jusitfy-between items-center">
+                <img class="h-12" src="images/Spotify-Logo.png">
+            </div>
+            <label for="menu-toggle" class="point-cursor lg:hidden block">
+                <img class="h-12" src="images/drop-down.jpg">
+            </label>
+            <input type="checkbox" class="hidden" id="menu-toggle"/>
+        </nav>
+    </header>
+
 </body>
 </html>
