@@ -1,75 +1,9 @@
-#greenText{
-    color: #46EB7D;
-    text-shadow: 1px 1px black;
-    
-}
-#blackText{
-    color: #191414;
-    text-shadow: 1px 1px white;
-    
-}
-#whiteText{
-    color:     #FFFFFF;
-    text-shadow: 1px 1px #46EB7D;
-}
-
-#logo {
+  body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-style: italic;
-    font-weight: bold;
-    padding: 10px;
-}
-
-#head {
-    font-size: 50px;
-}
-
-#artistInfo {
-    justify-content: center;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}    
-
-body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: url(../images/admission-large.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #464646;
-}
-
-footer{
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: relative;
-}
-
-@media only screen and (max-width: 767px) {
-    body {
-      background-image: url(../images/admission-small.jpg);
-    }
+    min-height: 100vh;
+    flex-direction: column;
   }
 
-@media only screen and (max-width: 375px) {
-    body {
-      background-image: url(../images/admission-small.jpg);
-    }
+  main {
+    flex: 1 0 auto;
   }
-
-
-
-.has-image-centered {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
