@@ -1,3 +1,6 @@
-language: node_js
+language: generic node_js
 node_js:
   - 7
+  branches:
+  only:
+    - master
