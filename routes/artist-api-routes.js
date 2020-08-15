@@ -14,12 +14,7 @@ module.exports = function(app) {
 
   // GET route for getting all of the artists info
   app.get("/api/artists", function(req, res) {
-    var query = {};
-    // if (req.query.author_id) {
-    //   query.ArtistId = req.query.artist_id;
-    // }
     db.Artist.findAll({
-      where: query
     }).then(function(dbArtist) {
       res.json(dbArtist);
     });
