@@ -1,24 +1,24 @@
 var events = 0;
 
-// console.log("Joanna..");
-
-// $( document ).ready(function(event) {
-//   console.log( "ready!" );
-//   $("#search").click(function() {
-//     event.preventDefault();
-//     console.log("hi");
-//   })
-// });
-
-$("#search").click(function () {
-  console.log("hi");
-  let artistSearch = $("#artist").val();
-  console.log(artistSearch)
-  fmSearch(artistSearch);
-  ticketSearch(artistSearch);
+$( document ).ready(function() {
+  console.log( "ready!" );
+  $("#searchSubmit").click(function(event) {
+    event.preventDefault();
+    let artistSearch = $("#artist").val();
+    console.log(artistSearch)
+    fmSearch(artistSearch);
+    ticketSearch(artistSearch);    
+  })
 });
 
-{/*
+// $("#search").click(function () {
+//   console.log("hi");
+//   let artistSearch = $("#artist").val();
+//   console.log(artistSearch)
+//   fmSearch(artistSearch);
+//   ticketSearch(artistSearch);
+// });
+
 function fmSearch(artistSearch) {
   $("#artistName").text(artistSearch);
   artistSearch = encodeURIComponent(artistSearch.trim())
@@ -104,5 +104,3 @@ function ticketSearch(artistSearch) {
     // })
   })
 }
-
-*/}
