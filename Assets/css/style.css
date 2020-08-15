@@ -3,7 +3,14 @@
     min-height: 100vh;
     flex-direction: column;
   }
-
   main {
     flex: 1 0 auto;
+  }
+  #lastFm{
+    padding-top: 25px;
+  }
+
+  #artistImg {
+    max-width: 100%;
+    height: auto;
   }
