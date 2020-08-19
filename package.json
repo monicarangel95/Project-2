@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/monicarangel95/Project-2#readme",
   "dependencies": {
-    "tailwindcss": "^1.6.2",
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
-    "sequelize": "^6.3.4"
+    "sequelize": "^6.3.4",
+    "tailwindcss": "^1.6.2"
   }
 }
