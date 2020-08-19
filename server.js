@@ -24,8 +24,6 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
-
-=======
 require("./routes/artist-api-routes.js")(app);
 require("./routes/event-api-routes.js")(app);
 

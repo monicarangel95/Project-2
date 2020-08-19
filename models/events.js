@@ -1,12 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
   var Event = sequelize.define("Event", {
-    // artist: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     len: [1],
-    //   },
-    // },
     venue: {
       type: DataTypes.TEXT,
       allowNull: true,
@@ -14,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
         len: [1],
       },
     },
-    Date: {
+    date: {
       type: DataTypes.STRING,
       allowNull: true,
     },

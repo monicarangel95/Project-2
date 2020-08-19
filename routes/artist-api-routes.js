@@ -9,7 +9,6 @@
 var db = require("../models");
 
 // Routes
-=======
 module.exports = function(app) {
 
   // GET route for getting all of the artists info
@@ -22,8 +21,6 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new artist's info
-
-=======
   app.post("/api/artists", function(req, res) {
     db.Artist.create(req.body).then(function(dbArtist) {
 
@@ -32,8 +29,6 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting saved artist info
-
-=======
   app.delete("/api/artists/:id", function(req, res) {
     db.Artist.destroy({
       where: {
