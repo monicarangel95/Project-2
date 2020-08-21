@@ -1,36 +1,34 @@
 //Materialize JQuery
 $(document).ready(function () {
     $('.sidenav').sidenav();
-var savedEvent = JSON.parse(localStorage.getItem("savedEvent"));
-console.log(savedEvent);
-
-savedEvent.forEach(event => {
-    createCard(event.datetime, event.venue.location)
-});
 
     // Make a get request to our api route that will return every book
-    $.get("/api/events", function (id) {
+    $.get("/api/events", function (res) {
         // For each event that our server sends us
-        console.log(events)
-        for (i = 0; i < events; i++) {
-            const date = new Date(Date.parse(response[i].datetime))
-            const location = response[i].venue.location
-            createCard(date, location, i)
+        // console.log(events)
+        console.log(res)
+        for (i = 0; i < res.length; i++) {
+            const name = res[i].name
+            const location = res[i].location
+            const date = res[i].date
+            const number = i
+            createCard(name, location, date, number)
+            console.log
         }
     })
 
-    function createCard(date, location, number) {
+    function createCard(name, location, date, number) {
         //ADD BUTTON
         var button = $("<button>");
         button.addClass("btn-floating waves-effect waves-light red right");
-
+        button.attr('onClick','deletethis(this.id)')
         button.attr('id', number)
         button.css({
             "margin-right": "10px",
             "margin-top": "10px",
         });
         var symbol = $("<i>");
-        symbol.addClass("material-icons").text("add");
+        symbol.addClass("material-icons").text("close");
         button.append(symbol);
 
         var newCol = $("<div>");
@@ -48,18 +46,44 @@ savedEvent.forEach(event => {
 
         var cardTitle = $("<span>");
         cardTitle.addClass("card-title");
-        cardTitle.attr('id', 'location-' + number)
-        cardTitle.text(location);
+        cardTitle.attr('id', 'artist-' + number)
+        cardTitle.text(name);
 
-        var cardInformation = $("<p>");
-        cardInformation.text(date);
-        cardInformation.attr('id', 'date-' + number)
+        var cardInformation1 = $("<p>");
+        cardInformation1.text(location);
+        cardInformation1.attr('id', 'location-' + number)
+
+        var cardInformation2 = $("<p>");
+        cardInformation2.text(date);
+        cardInformation2.attr('id', 'date-' + number)
 
         cardBody.append(cardTitle);
-        cardBody.append(cardInformation);
+        cardBody.append(cardInformation1);
+        cardBody.append(cardInformation2);
         newCard.append(cardImage);
         newCard.append(cardBody);
         newCol.append(newCard);
         $("#events-area").append(newCol);
     }
 });
+
+
+// // Possible code for delete get request/function
+
+// // Make a get request to get a specific event by id
+// $.get("/api/events/:id", function (res) {
+//     // For each event that our server sends us
+//     // console.log(events)
+//     console.log(res)
+//         const name = res.name
+//         const location = res.location
+//         const date = res.date
+//         // const number = i
+// })
+
+// function deletethis (id) {
+//     $.ajax({
+//       method: "DELETE",
+//       url: "/api/events/" + id
+//     })
+// };

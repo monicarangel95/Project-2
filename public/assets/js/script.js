@@ -4,11 +4,9 @@ $(document).ready(function(){
 })
 
 //API STUFF?
-
-
-//GLOBAL VARIABLES
-var events = 0;
-
+var artistname = ''
+const lastFMAPI = "4228a7dc9f02d04d2a06295ef5d3ac49"
+const bandsintownAPI = "45255e6cc480b6c589613047fb0d5749"
 //GETTING THE SEARCHED ARTIST FROM
 //THE SEARCH BAR
 $("#search-button").click(function(){
@@ -22,14 +20,14 @@ $("#search-button").click(function(){
     $("#artist").removeClass("hide")
     lastFM(artist)
     BIT(artist)
-    createCard()
+    artistname = artist
 })
 //------------------------------------------
 
 function lastFM(artist){
-    //GETS ARTIST SUMMARY
+
     artist = encodeURIComponent(artist.trim())
-    var queryURL1 = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=4228a7dc9f02d04d2a06295ef5d3ac49&format=json"
+    var queryURL1 = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFMAPI + "&format=json"
     $.ajax({
         url: queryURL1,
         method: "GET",
@@ -46,7 +44,7 @@ function lastFM(artist){
         $("#genre").text("Genre: " + response.artist.tags.tag[0].name)
     })
 
-    var queryURL2 = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artist + "&api_key=4228a7dc9f02d04d2a06295ef5d3ac49&format=json"
+    var queryURL2 = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artist + "&api_key=" + lastFMAPI + "&format=json"
     $.ajax({
         url: queryURL2,
         method: "GET"
@@ -58,7 +56,9 @@ function lastFM(artist){
 }
 
 function BIT(artist){
-    var queryURL1 = "https://rest.bandsintown.com/artists/" + artist + "/?app_id=45255e6cc480b6c589613047fb0d5749"
+    var events = 0
+
+    var queryURL1 = "https://rest.bandsintown.com/artists/" + artist + "/?app_id=" + bandsintownAPI
     $.ajax({
         url: queryURL1,
         method: "GET",
@@ -69,21 +69,49 @@ function BIT(artist){
         $("#artist-image").attr("src", response.image_url)
 
         //Gets the Number of Events
-        
+        events = response.upcoming_event_count
+        console.log(events)
+        populateEvents(artist, events)
     })
 }
 
-function createCard(){
+function populateEvents(artist, events){
+    var queryURL2 = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=" + bandsintownAPI
+
+    $.ajax({
+        url: queryURL2,
+        method: "GET",
+    }).then(function(response){
+        console.log(events)
+        $("#delete").empty()
+        if(events>0){
+            $("#no-events").addClass("hide")
+            
+            for(i=0;i<events;i++){
+                const date = new Date(Date.parse(response[i].datetime))
+                const location = response[i].venue.location
+                createCard(date, location, i)
+            }
+        }else{
+            $("#no-events").removeClass("hide")
+        }
+
+    })
+}
+
+function createCard(date, location, number){
         //ADD BUTTON
         var button = $("<button>");
         button.addClass("btn-floating waves-effect waves-light red right");
+        button.attr('onClick','savethis(this.id)')
+        button.attr('id',number)
         button.css({
             "margin-right": "10px",
             "margin-top": "10px",
         });
         var symbol = $("<i>");
-        symbol.addClass("material-icons").text("add")
-        button.append(symbol)
+        symbol.addClass("material-icons").text("add");
+        button.append(symbol);
         
         var newcol = $("<div>");
         newcol.addClass("col s12 m6");
@@ -100,10 +128,12 @@ function createCard(){
     
         var cardtitle = $("<span>");
         cardtitle.addClass("card-title");
-        cardtitle.text("This is created from JS");
+        cardtitle.attr('id', 'location-' + number)
+        cardtitle.text(location);
     
         var cardinformation = $("<p>");
-        cardinformation.text("This information came from JS");
+        cardinformation.text(date);
+        cardinformation.attr('id', 'date-' + number)
     
         cardbody.append(cardtitle);
         cardbody.append(cardinformation);
@@ -111,5 +141,35 @@ function createCard(){
         newcard.append(cardbody);
         newcol.append(newcard);
     
-        $("#events-area").append(newcol);
+        $("#delete").append(newcol);
+}
+
+
+function postEvent(name, location, date) {
+    $.post("/api/events", {
+        name: name,
+        location: location,
+        date: date
+    })
+}
+
+function savethis (id) {
+    console.log("=======================")
+    console.log(id)
+
+    // var saveButton = $(".material-icons")
+    var name = $("#search-artist").val();
+    var location = $("#location-"+id).text();
+    var date = $("#date-"+id).text();
+    console.log(name, location, date);
+
+    event.preventDefault();
+    var eventData = {
+        name: name,
+        location: location,
+        date: date
+    };
+
+    postEvent(eventData.name, eventData.location, eventData.date);
+    
 }

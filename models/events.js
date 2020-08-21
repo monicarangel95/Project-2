@@ -1,7 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
   var Event = sequelize.define("Event", {
-    venue: {
-      type: DataTypes.TEXT,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
+    location: {
+      type: DataTypes.STRING,
       allowNull: true,
       validate: {
         len: [1],
