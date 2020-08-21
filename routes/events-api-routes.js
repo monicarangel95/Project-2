@@ -7,6 +7,8 @@
 
 // Requiring our models
 var db = require("../models");
+var axios = require("axios");
+require("dotenv").config();
 
 // Routes
 // =============================================================
@@ -17,6 +19,28 @@ module.exports = function (app) {
     .then(function(dbEvent) {
       res.json(dbEvent);
     });
+  });
+
+  app.post("/api/test", function (req, res) {
+    axios({
+      method: 'get',
+      url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=beyonce&api_key='+process.env.API_KEY_L+'&format=json'
+    })
+      .then(function(response) {
+        console.log(response.data)
+        res.json(response.data)
+      });
+  });
+
+  app.post("/api/test", function (req, res) {
+    axios({
+      method: 'get',
+      url: 'https://rest.bandsintown.com/artists/beyonce&api_key='+process.env.API_KEY_B+'&format=json'
+    })
+      .then(function(response) {
+        console.log(response.data)
+        res.json(response.data)
+      });
   });
 
   // // Get route for retrieving a single post
