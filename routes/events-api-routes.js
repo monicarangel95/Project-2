@@ -21,10 +21,26 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/test", function (req, res) {
+  // GET route for getting the searched artist name
+  app.get("/api/name", function (req, res) {
+    db.Name.findAll({})
+    .then(function(dbName) {
+      res.json(dbName);
+    });
+  });
+
+  app.get("/api/test", function (req, res) {
+    $.ajax({
+      url: "/api/name",
+      data: {
+        name: name
+      },
+      success: function( result ) {
+      }
+    });  
     axios({
       method: 'get',
-      url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=beyonce&api_key='+process.env.API_KEY_L+'&format=json'
+      url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+name+'&api_key='+process.env.API_KEY_L+'&format=json'
     })
       .then(function(response) {
         console.log(response.data)
@@ -61,6 +77,16 @@ module.exports = function (app) {
       name: req.body.name,
       location: req.body.location,
       date: req.body.date
+    })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+
+  // POST route for saving an event's artist name
+  app.post("/api/name", function (req, res) {
+    db.Name.create({
+      name: req.body.name
     })
       .catch(function(err) {
         res.status(401).json(err);
