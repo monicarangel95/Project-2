@@ -17,26 +17,19 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // Artists route loads artists.html
-  app.get("/artists", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/artists.html"));
-  });
-
-  // Shows route loads shows.html
+  // Events route loads shows.html
   app.get("/events", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/events.html"));
   });
-  
-  // Music route loads music.html
-  app.get("/music", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/music.html"));
-  });
 
-  // Login route loads login.html
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
+  // // Single event route loads shows.html
+  // app.get("/events/:id", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/events.html"));
+  // });
+
+  // // Login route loads login.html
+  // app.get("/login", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/login.html"));
+  // });
 
 };
-
-// Possible navbar pages:   artists, music, shows, login

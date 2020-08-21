@@ -19,6 +19,18 @@ module.exports = function (app) {
     });
   });
 
+  // // Get route for retrieving a single post
+  // app.get("/api/events/:id", function(req, res) {
+  //   db.Event.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //     .then(function(dbEvent) {
+  //       res.json(dbEvent);
+  //     });
+  // });
+
   // POST route for saving a new event data
   app.post("/api/events", function (req, res) {
     db.Event.create({
@@ -41,5 +53,5 @@ module.exports = function (app) {
       res.json(dbEvent);
     });
   });
-  
+
 };
