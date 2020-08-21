@@ -113,3 +113,32 @@ function createCard(){
     
         $("#events-area").append(newcol);
 }
+
+function postEvent(name, location, date) {
+    $.post("/api/events", {
+        name: name,
+        location: location,
+        date: date
+    })
+}
+
+function savethis (id) {
+    console.log("=======================")
+    console.log(id)
+
+    // var saveButton = $(".material-icons")
+    var name = $("#search-artist").val();
+    var location = $("#location-"+id).text();
+    var date = $("#date-"+id).text();
+    console.log(name, location, date);
+
+    event.preventDefault();
+    var eventData = {
+        name: name,
+        location: location,
+        date: date
+    };
+
+    postEvent(eventData.name, eventData.location, eventData.date);
+    
+}
