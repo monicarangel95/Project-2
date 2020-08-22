@@ -3,6 +3,8 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
 })
 
+// name -> db -> get db name to put into url -> returns res.json to front ->
+
 //API STUFF?
 var artistname = ''
 const lastFMAPI = "4228a7dc9f02d04d2a06295ef5d3ac49"
@@ -11,6 +13,9 @@ const bandsintownAPI = "45255e6cc480b6c589613047fb0d5749"
 //THE SEARCH BAR
 $("#search-button").click(function(){
     let artist = $("#search-artist").val();
+    $.post("/api/name", {
+        name: artist
+    })
     // console.log(artist)
     //This Hides the Description of our website
     //so what the user searches appears at the top
