@@ -32,7 +32,7 @@ $("#search-button").click(function(){
 function lastFM(artist){
 
     artist = encodeURIComponent(artist.trim())
-    var queryURL1 = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFMAPI + "&format=json"
+    var queryURL1 = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFMAPI + "&format=json"
     $.ajax({
         url: queryURL1,
         method: "GET",
@@ -49,7 +49,7 @@ function lastFM(artist){
         $("#genre").text("Genre: " + response.artist.tags.tag[0].name)
     })
 
-    var queryURL2 = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artist + "&api_key=" + lastFMAPI + "&format=json"
+    var queryURL2 = "https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artist + "&api_key=" + lastFMAPI + "&format=json"
     $.ajax({
         url: queryURL2,
         method: "GET"
