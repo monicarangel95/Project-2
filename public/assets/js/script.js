@@ -162,7 +162,6 @@ function savethis (id) {
     console.log("=======================")
     console.log(id)
 
-    // var saveButton = $(".material-icons")
     var name = $("#search-artist").val();
     var location = $("#location-"+id).text();
     var date = $("#date-"+id).text();
