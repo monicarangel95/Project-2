@@ -27,6 +27,7 @@ npm install express sql2 sequelize
 ```sh
 open terminal and type 'node server.js'
 ```
+In order to search something, the user types the artist's name into the search bar and presses search. Data of the artist's genre, top songs, and event times and locations population their respective area. If the user was to search another artist, they can repeat the search request and new information will be displayed.
 
 ## Authors
 
