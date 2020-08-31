@@ -25,13 +25,18 @@ npm install express sql2 sequelize
 ## Usage
 
 ```sh
-open terminal and type 'node server.js'
+Open terminal, change to this project's folder, and type 'node server.js'
 ```
+
 In order to search something, the user types the artist's name into the search bar and presses search. Data of the artist's genre, top songs, and event times and locations population their respective area. If the user was to search another artist, they can repeat the search request and new information will be displayed.
+
+## Link to Application
+
+[damp-eyrie-26652.herokuapp.com](https://damp-eyrie-26652.herokuapp.com/)
 
 ## Authors
 
-👤 **Monica Rangel, Jaqueilin Rocha, Andrew Yen, Raffay Ahmed**
+👤 **Monica Rangel, Jaquelin Rocha, Andrew Yen, Raffay Ahmed**
 
 ## Show your support
 
@@ -39,5 +44,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2020 [Monica Rangel, Jaqueilin Rocha, Andrew Yen, Raffay Ahmed<br />
+Copyright © 2020 [Monica Rangel, Jaquelin Rocha, Andrew Yen, Raffay Ahmed]
+
 This project is [MIT](https://github.com/monicarangel95/Project-2/blob/master/LICENSE) licensed.
