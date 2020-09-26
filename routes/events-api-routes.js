@@ -7,47 +7,90 @@
 
 // Requiring our models
 var db = require("../models");
+var axios = require("axios");
+require("dotenv").config();
 
 // Routes
 // =============================================================
 module.exports = function (app) {
-  // GET route for getting all of the posts
+  // GET route for getting all saved events data
   app.get("/api/events", function (req, res) {
-    var query = {};
-    if (req.query.author_id) {
-      query.AuthorId = req.query.author_id;
-    }
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Event.findAll({
-      where: query,
-      include: [db.Event],
-    }).then(function (dbEvent) {
+    db.Event.findAll({})
+    .then(function(dbEvent) {
       res.json(dbEvent);
     });
   });
 
-  // Get route for retrieving a single post
-  app.get("/api/events/:id", function (req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Event.findOne({
-      where: {
-        id: req.params.id,
+  // GET route for getting the searched artist name
+  app.get("/api/name", function (req, res) {
+    db.Name.findAll({})
+    .then(function(dbName) {
+      res.json(dbName);
+    });
+  });
+
+  app.get("/api/test", function (req, res) {
+    $.ajax({
+      url: "/api/name",
+      data: {
+        name: name
       },
-      include: [db.Event],
-    }).then(function (dbEvent) {
-      res.json(dbEvent);
-    });
+      success: function( result ) {
+      }
+    });  
+    axios({
+      method: 'get',
+      url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+name+'&api_key='+process.env.API_KEY_L+'&format=json'
+    })
+      .then(function(response) {
+        console.log(response.data)
+        res.json(response.data)
+      });
   });
 
-  // POST route for saving a new post
+  app.post("/api/test", function (req, res) {
+    axios({
+      method: 'get',
+      url: 'https://rest.bandsintown.com/artists/beyonce&api_key='+process.env.API_KEY_B+'&format=json'
+    })
+      .then(function(response) {
+        console.log(response.data)
+        res.json(response.data)
+      });
+  });
+
+  // // Get route for retrieving a single post
+  // app.get("/api/events/:id", function(req, res) {
+  //   db.Event.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //     .then(function(dbEvent) {
+  //       res.json(dbEvent);
+  //     });
+  // });
+
+  // POST route for saving a new event data
   app.post("/api/events", function (req, res) {
-    db.Event.create(req.body).then(function (dbEvent) {
-      res.json(dbEvent);
-    });
+    db.Event.create({
+      name: req.body.name,
+      location: req.body.location,
+      date: req.body.date
+    })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+
+  // POST route for saving an event's artist name
+  app.post("/api/name", function (req, res) {
+    db.Name.create({
+      name: req.body.name
+    })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
   });
 
   // DELETE route for deleting posts
@@ -61,14 +104,4 @@ module.exports = function (app) {
     });
   });
 
-  // PUT route for updating posts
-  //   app.put("/api/posts", function (req, res) {
-  //     db.Post.update(req.body, {
-  // //       where: {
-  // //         id: req.body.id,
-  // //       },
-  // //     }).then(function (dbEvent) {
-  // //       res.json(dbEvent);
-  // //     });
-  //   });
 };

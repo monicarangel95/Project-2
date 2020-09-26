@@ -5,6 +5,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+require("dotenv").config();
 
 // Sets up the Express App
 // =============================================================
@@ -24,8 +25,8 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
-require("./routes/artist-api-routes.js")(app);
-require("./routes/event-api-routes.js")(app);
+// require("./routes/artist-api-routes.js")(app);
+require("./routes/events-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

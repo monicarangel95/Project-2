@@ -1,7 +1,7 @@
 body{
 }
 header{
-   background: url(images/concert-cropped.jpg);
+   background: url(../images/concert-cropped.jpg);
    background-size: cover;
    object-fit: cover;
    background-position: center;
