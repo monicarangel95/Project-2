@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from "./components/layout/Navbar.js";
-import Search from "./components/layout/Search.js";
+import Search from "./components/layout/Search/Search.js";
 
 function App() {
   return (
