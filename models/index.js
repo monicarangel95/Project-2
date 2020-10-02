@@ -8,12 +8,19 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
+// let sequelize;
+// if (process.env.JAWSDB_URL) {
+//   sequelize = new Sequelize(process.env.JAWSDB_URL, {});
+// } else {
+//   const env = process.env.NODE_ENV || "development";
+//   const config = path.resolve(__dirname, "..", "config", "config.json")[env];
+//   sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
+
 let sequelize;
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL, {});
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  const env = process.env.NODE_ENV || "development";
-  const config = path.resolve(__dirname, "..", "config", "config.json")[env];
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
