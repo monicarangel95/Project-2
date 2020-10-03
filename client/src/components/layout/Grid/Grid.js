@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react';
 import "./Grid.css";
 import artist from './artist.jpg';
 import events from './events.jpg';
@@ -11,7 +11,7 @@ function Grid() {
                   {/*  Search your favorite artist */}
                 <div class="row">
                     <div class="col s12 l4 push-l2">
-                        <img src={artist} alt="Picture of an Artist on Stage" class="responsive-img z-depth-2" />
+                        <img src={artist} alt="Artist on Stage" class="responsive-img z-depth-2" />
                     </div>
                     <div class="col s12 m6 l6 offset-l1">
                         <h3 class="indigo-text text-darken 4">Search Your Favorite Artists</h3>
@@ -21,7 +21,7 @@ function Grid() {
                 {/* Look for upcoming events */}
                 <div class="row">
                     <div class="col s12 l4 push-l7">
-                        <img src={events} alt="Picture of an Artist on Stage" class="responsive-img z-depth-2" />
+                        <img src={events} alt="Concert Event" class="responsive-img z-depth-2" />
                     </div>
                     <div class="col s12 l6 pull-l4 offset-l1">
                         <h3 class="indigo-text text-darken 4">Look for Upcoming Events</h3>
@@ -31,7 +31,7 @@ function Grid() {
                 {/* Find An Artist's Top Songs */}
                 <div class="row">
                     <div class="col s12 l4 push-l2">
-                        <img src={music} alt="Picture of an Artist on Stage" class="responsive-img z-depth-2" />
+                        <img src={music} alt="Artist Playing Songs" class="responsive-img z-depth-2" />
                     </div>
                     <div class="col s12 l6 offset-l1">
                         <h3 class="indigo-text text-darken 4">Find An Artist's Top Songs</h3>
