@@ -12,20 +12,20 @@ export class Navbar extends Component {
     render() {
         return (
             <div>
-                <nav class="nav-wrapper black z-depth-5">
-                    <div class="container">
-                        <a href="index.html" class="brand-logo"><strong>Spot-A-Show</strong></a>
-                        <a href="#" class="sidenav-trigger" data-target="mobile-links">
-                            <i class="material-icons">menu</i>
+                <nav className="nav-wrapper black z-depth-5">
+                    <div className="container">
+                        <a href="/" className="brand-logo"><strong>Spot-A-Show</strong></a>
+                        <a href="/" className="sidenav-trigger" data-target="mobile-links">
+                            <i className="material-icons">menu</i>
                         </a>
-                        <ul class="right hide-on-med-and-down">
-                            <li><a href="#">Home</a></li>
+                        <ul className="right hide-on-med-and-down">
+                            <li><a href="/">Home</a></li>
                             <li><a href="/events">Events</a></li>
                         </ul>
                     </div>
                 </nav>
-                <ul class="sidenav" id="mobile-links">
-                    <li><a href="#">Home</a></li>
+                <ul className="sidenav" id="mobile-links">
+                    <li><a href="/">Home</a></li>
                     <li><a href="/events">Events</a></li>
                 </ul>
             </div>
