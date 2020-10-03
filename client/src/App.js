@@ -1,16 +1,22 @@
 import React from 'react';
-import './App.css';
-import Navbar from "./components/layout/Navbar/Navbar.js";
-import Search from "./components/layout/Search/Search.js";
-import Grid from "./components/layout/Grid/Grid.js";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./pages/Home.js";
+// import Events from "./pages/Events.js";
+import Navbar from './components/layout/Navbar/Navbar.js';
+import Wrapper from "./components/layout/Wrapper/Wrapper.js";
+
 function App() {
   return (
-<div>
-<Navbar />
-<Search />
-<Grid />
-</div>
+    <Router>
+      <div>
+        <Navbar />
+        <Wrapper>
+          <Route exact path="/*" component={Home} />
+          <Route exact path="/Home" component={Home} />
+          {/* <Route exact path="/events" component={Events} /> */}
+        </Wrapper>
+      </div>
+    </Router>
   );
 }
-
 export default App;
