@@ -1,8 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home.js";
-// import Events from "./pages/Events.js";
+import Events from "./pages/Events.js";
+import NoMatch from "./pages/NoMatch.js";
 import Navbar from './components/layout/Navbar/Navbar.js';
+import SideNav from './components/layout/SideNav/SideNav.js';
+import Footer from './components/layout/Footer/Footer.js';
+// import Header from "./components/layout/Header/Header.js";
 import Wrapper from "./components/layout/Wrapper/Wrapper.js";
 
 function App() {
@@ -10,11 +14,15 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <Wrapper>
-          <Route exact path="/*" component={Home} />
+        <SideNav />
+        {/* <Header /> */}
+        <Switch>
+          <Route exact path="/" component={Home} />
           <Route exact path="/Home" component={Home} />
-          {/* <Route exact path="/events" component={Events} /> */}
-        </Wrapper>
+          <Route exact path="/events" component={Events} />
+          <Route component={NoMatch} />
+          </Switch>
+          <Footer/>
       </div>
     </Router>
   );
