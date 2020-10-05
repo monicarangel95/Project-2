@@ -1,13 +1,12 @@
-import React from 'react';
+import React from 'react'
 import "./Search.css"; 
 
 function Search(props) {
-    // Initialization
 
     // render() {
         return (
-            <div className="header">
-                <div className="row center" style= {{marginTop: "60px"}} >
+            <div>
+                <div className="center">
                     <div id="search-area" class="col l7 s12 offset-l2" >
                         <form action="#">
                             <div class="input-field">
@@ -23,11 +22,8 @@ function Search(props) {
                         <div id="search-button" class="btn waves-effect waves-light">Search</div>
                     </div>
                 </div>
-                <div class="row">
-                </div>
             </div>
         )
     // }
 }
-
 export default Search

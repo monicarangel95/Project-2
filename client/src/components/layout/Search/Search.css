@@ -2,19 +2,9 @@
     margin-top: 60px;
 }
 
-.row {
+/* .row {
     margin-top: 60px;
-}
-
-.header{
-    background-image: url(./concert-cropped.jpg);
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    min-height: 500px;
-    box-shadow: -10px 5px 10px black;
-    margin-top: -60px;
-}
+} */
 
 #search-area{
     background-color: #f7f7f7;
@@ -24,9 +14,3 @@
 #search-button {
     margin-top: 60px;
 }
-
-@media screen and (max-width: 670px){
-     header{
-         min-height: 300px;
-     }
- }
