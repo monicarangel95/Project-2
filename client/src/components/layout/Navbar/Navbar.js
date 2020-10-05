@@ -1,16 +1,7 @@
 import React, { Component } from 'react'
-import M from "materialize-css/dist/js/materialize.min.js";
-// import { Link } from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
+import "materialize-css/dist/css/materialize.min.css";
 export class Navbar extends Component {
-    // Initialization
-    componentDidMount() {
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-        });
-    }
     render() {
         return (
             <div>
@@ -21,15 +12,11 @@ export class Navbar extends Component {
                             <i className="material-icons">menu</i>
                         </a>
                         <ul className="right hide-on-med-and-down">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/events">Events</a></li>
+                            <li><Link class="waves-effect" href to="/">Home</Link></li>
+                            <li><Link class="waves-effect" href to="/events">Events</Link></li>
                         </ul>
                     </div>
                 </nav>
-                <ul className="sidenav" id="mobile-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/events">Events</a></li>
-                </ul>
             </div>
         )
     }
