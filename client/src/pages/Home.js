@@ -65,7 +65,7 @@ function Home() {
 
     // Make API call here with artist name from Search.js(stored as state and pass state here)
     // Somehow, convert function createCard() into component?
-    console.log(artistData)
+    // console.log(artistData)
     // console.log(artistImage)
 
     return (

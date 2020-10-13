@@ -16,14 +16,14 @@ export class SideNav extends Component {
             <ul className="sidenav" id="mobile-links">
                 <li><div className="user-view"style={{height: '100px'}}>
                     <div className="background">
-                        <img src={artist} alt="Artist on Stage" class="responsive-img"/>
+                        <img src={artist} alt="Artist on Stage" className="responsive-img"/>
                     </div>
                         <span className="white-text center name"style={{marginTop: '0', fontSize: "20px"}}>Spot-A-Show</span>
                     </div>
                 </li>
                     <li><div className="divider"></div></li>
-                    <li><Link class="waves-effect" href to="/">Home</Link></li>
-                    <li><Link class="waves-effect" href to="/events">Events</Link></li>
+                    <li><Link className="waves-effect" href to="/">Home</Link></li>
+                    <li><Link className="waves-effect" href to="/events">Events</Link></li>
             </ul>
         )
     }

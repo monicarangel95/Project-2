@@ -7,7 +7,7 @@ import Navbar from './components/layout/Navbar/Navbar.js';
 import SideNav from './components/layout/SideNav/SideNav.js';
 import Footer from './components/layout/Footer/Footer.js';
 // import Header from "./components/layout/Header/Header.js";
-import Wrapper from "./components/layout/Wrapper/Wrapper.js";
+// import Wrapper from "./components/layout/Wrapper/Wrapper.js";
 
 function App() {
   return (
