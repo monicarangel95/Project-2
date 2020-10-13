@@ -20,15 +20,19 @@ function Home() {
         song4: "",
         song5: "",
     })
+    const [artistImage, setArtistImage] = useState({
+        image: ""
+    })
     // const [eventData, setEventData] = useState({})
 
     const handleInputChange = (event) => {
         event.preventDefault();
         setArtist(event.target.value);
     }
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log(artist);
+        // console.log(artist);
         API.fetchArtist(artist) 
         .then( data => {
             // console.log (data.data.artist)
@@ -41,7 +45,6 @@ function Home() {
         
         API.fetchSongs(artist) 
         .then( data => {
-            // console.log (data.data.artist)
             setSongData({
                 song1: data.data.toptracks.track[0].name,
                 song2: data.data.toptracks.track[1].name,
@@ -50,12 +53,20 @@ function Home() {
                 song5: data.data.toptracks.track[4].name
             })
         })
+        
+        API.fetchImage(artist) 
+        .then( data => {
+            setArtistImage({
+                image: data.data.image_url
+            })
+        })
 
     }
+
     // Make API call here with artist name from Search.js(stored as state and pass state here)
     // Somehow, convert function createCard() into component?
     console.log(artistData)
-    // console.log(artistData.song1)
+    // console.log(artistImage)
 
     return (
         <div>
@@ -67,6 +78,7 @@ function Home() {
                 name={artistData.name}
                 bio={artistData.bio}
                 genre={artistData.genre}
+                image={artistImage.image}
                 song1={songData.song1}
                 song2={songData.song2}
                 song3={songData.song3}
