@@ -8,7 +8,7 @@ $(document).ready(function(){
 //API STUFF?
 var artistname = ''
 const lastFMAPI = "4228a7dc9f02d04d2a06295ef5d3ac49"
-const bandsintownAPI = "45255e6cc480b6c589613047fb0d5749"
+const bandsintownAPI = "c9c5bd4d98a900cc7acff614d4638962"
 //GETTING THE SEARCHED ARTIST FROM
 //THE SEARCH BAR
 $("#search-button").click(function(){

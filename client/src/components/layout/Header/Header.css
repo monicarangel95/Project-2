@@ -1,0 +1,20 @@
+
+.row {
+    margin-top: 60px;
+}
+
+.header{
+    background-image: url(./concert-cropped.jpg);
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    min-height: 400px;
+    box-shadow: -10px 5px 10px black;
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 670px){
+     header{
+         min-height: 300px;
+     }
+ }

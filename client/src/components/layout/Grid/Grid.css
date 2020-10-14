@@ -1,0 +1,21 @@
+/* body{
+}
+header{
+   background: url(../images/concert-cropped.jpg);
+   background-size: cover;
+   object-fit: cover;
+   background-position: center;
+   min-height: 500px;
+   box-shadow: -10px 5px 10px black;
+}
+@media screen and (max-width: 670px){
+    header{
+        min-height: 300px;
+    }
+}
+#search-area{
+    background-color: #f7f7f7;
+}
+img{
+    max-height: 150px;
+} */
