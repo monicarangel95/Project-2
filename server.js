@@ -24,6 +24,15 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+// // Serve up static assets (usually on heroku)
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
+
+// // Add routes, both API and view
+// const routes = require("./routes");
+// app.use(routes)
+
 // Connects to MongoDB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/spotashow", {
   useNewUrlParser: true,
