@@ -3,7 +3,8 @@ import Search from "../components/layout/Search/Search.js";
 import Grid from "../components/layout/Grid/Grid.js";
 import Header from "../components/layout/Header/Header.js";
 import ArtistInfo from "../components/layout/ArtistInfo/ArtistInfo.js";
-// import EventCard from "../components/layout/EventCard/EventCard.js";
+import EventCard from "../components/layout/EventCard/EventCard.js";
+import CreateCard from "../components/layout/CreateCard/CreateCard.js";
 import API from "../utils/API.js"
 
 function Home() {
@@ -21,9 +22,13 @@ function Home() {
         song5: "",
     })
     const [artistImage, setArtistImage] = useState({
+        // eventCount: 0,
         image: ""
     })
-    // const [eventData, setEventData] = useState({})
+    const [eventData, setEventData] = useState({
+        location: "",
+        date: "",
+    })
 
     const handleInputChange = (event) => {
         event.preventDefault();
@@ -60,13 +65,23 @@ function Home() {
                 image: data.data.image_url
             })
         })
+        
+        API.fetchEvents(artist) 
+        .then( data => {
+            setEventData({
+                date: JSON.stringify(new Date(Date.parse(data.data[0].datetime))),
+                // date: new Date(Date.parse(data.data[i].datetime)),
+                location: data.data[0].venue.location
+                // location: data.data[i].venue.location
+            })
+        })
 
     }
 
-    // Make API call here with artist name from Search.js(stored as state and pass state here)
-    // Somehow, convert function createCard() into component?
     // console.log(artistData)
     // console.log(artistImage)
+    console.log(eventData)
+    // Convert function createCard() into component, then pass in location/date state to that component
 
     return (
         <div>
@@ -85,9 +100,13 @@ function Home() {
                 song4={songData.song4}
                 song5={songData.song5}
             />}
-            {/* {!eventData ? <EventCard /> : <SearchEvents
-                for loop here, maybe
-                />} */}
+            {!eventData ? <EventCard /> : 
+            // for loop here, probably maybe
+            <CreateCard
+                name={artistData.name}
+                date={eventData.date}
+                location={eventData.location}
+            />}
 
         </div>
     )
