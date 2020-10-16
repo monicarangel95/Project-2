@@ -4,7 +4,7 @@ import "./Search.css";
 const Search = (props) => {
     return (
         <div className="center">
-            <div id="search-area" className="col l5 s12 offset-l3" >
+            <div id="search-area" className="col l5 s6 offset-s3 offset-l3" >
                 <form action="#">
                     <div className="input-field">
                         <input 
