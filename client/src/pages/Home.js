@@ -22,18 +22,13 @@ function Home() {
         song5: "",
     })
     const [artistImage, setArtistImage] = useState({
-        // eventCount: 0,
         image: ""
     })
-    const [eventCount, setEventCount] = useState([]);
 
     const [eventData, setEventData] = useState([])
 
     const handleInputChange = event => {
         event.preventDefault();
-
-        // const { value } = event.target;
-        // setEventData(value);
         setArtist(event.target.value);
     };
 
@@ -48,7 +43,6 @@ function Home() {
                     genre: data.data.artist.tags.tag[0].name
                 });
             });
-
         API.fetchSongs(artist)
             .then(data => {
                 setSongData({
@@ -59,46 +53,24 @@ function Home() {
                     song5: data.data.toptracks.track[4].name
                 })
             })
-
         API.fetchImage(artist)
             .then(data => {
                 setArtistImage({
                     image: data.data.image_url
                 })
             })
-
         API.fetchEvents(artist)
             .then(data => {
-                if (data.data.length === 0) {
-                    throw new Error("No results found.");
-                }
-                setEventData( 
+                setEventData(
                     eventData.concat(data.data)
                 )
                 console.log(data.data)
-                // setEventData( eventData => eventData.push (data.data
-                    
-                //     )
-                    // upcomingeventsarray: data.data
-             
-                    // upcomingeventscount: data.data.length,
-                    // upcomingeventsarray: data.data,
-                    // date: new Date(Date.parse(data.data[i].datetime)),
-
-                    // location: data.data[i].venue.location
-                
-                console.log(eventData)
             })
-
     }
 
     // console.log(artistData)
     // console.log(artistImage)
-    console.log(eventData)
-    console.log(eventData)
     // console.log(eventCount)
-    // Convert function createCard() into component, then pass in location/date state to that component
-
     return (
         <div>
             <Header>
@@ -116,20 +88,22 @@ function Home() {
                     song3={songData.song3}
                     song4={songData.song4}
                     song5={songData.song5}
-                />}
-            {!eventData.length ? (
-                <h1 className="text-center"></h1>
-            ) : (
-                eventData.map ( event => {
-                    return  <CreateCard
- 
-                    date={new Date (event.datetime) .toDateString()}
-                    location={event.venue.location}
-
                 />
-                })
+                && <EventCard
+                    length={eventData.length}
+                />
+            }
+            {!eventData.length ? (
+                <br></br>
+            ) : (
+                    eventData.map(event => {
+                        return <CreateCard
+                            date={new Date(Date.parse(event.datetime)).toString()}
+                            location={event.venue.location}
+                            length={event.length}
+                        />
+                    })
                 )}
-
         </div>
     );
 }
