@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EventCard(props){
+function EventCard(noEvents){
     // function createCard(date, location, number) **pass in with props
 
 
@@ -20,7 +20,7 @@ function EventCard(props){
                 </div>
             </div>
             <div id="no-events"className="col l12 s12 center">
-                <h2 className="">No Upcoming Events</h2>
+                <h2 className={noEvents}>No Upcoming Events</h2>
             </div>
         </div>
     </div>
