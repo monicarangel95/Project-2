@@ -78,6 +78,7 @@ function Home() {
                     handleInputChange={handleInputChange} />
             </Header>
             {!artistData.name ? <Grid /> :
+                <div>
                 <ArtistInfo
                     name={artistData.name}
                     bio={artistData.bio}
@@ -89,9 +90,11 @@ function Home() {
                     song4={songData.song4}
                     song5={songData.song5}
                 />
-                && <EventCard
+                
+                <EventCard
                     length={eventData.length}
                 />
+                </div>
             }
             {!eventData.length ? (
                 <br></br>
