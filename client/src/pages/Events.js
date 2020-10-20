@@ -4,7 +4,7 @@ import Header from "../components/layout/Header/Header.js";
 // import Row from "../components/layout/Row/Row.js";
 import EventCard from "../components/layout/EventCard/EventCard.js";
 import CreateCard from "../components/layout/CreateCard/CreateCard.js";
-import API from "../utils/API.js"
+// import API from "../utils/API.js"
 
 function Events() {
   
