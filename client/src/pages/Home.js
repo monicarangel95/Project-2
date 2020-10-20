@@ -68,7 +68,7 @@ function Home() {
             })
     }
 
-    // console.log(artistData)
+    // console.log(eventData)
     // console.log(artistImage)
     // console.log(eventCount)
     return (
@@ -77,7 +77,9 @@ function Home() {
                 <Search handleFormSubmit={handleFormSubmit}
                     handleInputChange={handleInputChange} />
             </Header>
-            {!artistData.name ? <Grid /> :
+            {!artistData.name ? (
+                <Grid /> 
+            ) : (
                 <div>
                 <ArtistInfo
                     name={artistData.name}
@@ -90,20 +92,21 @@ function Home() {
                     song4={songData.song4}
                     song5={songData.song5}
                 />
-                
                 <EventCard
                     length={eventData.length}
                 />
                 </div>
+                )
             }
             {!eventData.length ? (
                 <br></br>
             ) : (
                     eventData.map(event => {
                         return <CreateCard
+                            key={event.id}
                             date={new Date(Date.parse(event.datetime)).toString()}
                             location={event.venue.location}
-                            length={event.length}
+                            url={event.offers[0].url}
                         />
                     })
                 )}
