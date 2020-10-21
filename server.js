@@ -22,18 +22,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
-// // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
+// // // Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-// // Add routes, both API and view
-// const routes = require("./routes");
-// app.use(routes)
+// Add routes, both API and view
+const routes = require("./routes");
+app.use(routes)
 
 // Connects to MongoDB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://andrewyen64:Ay57435743@fitnesstracker.cavhs.mongodb.net/spotashow?retryWrites=true&w=majority", {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/spotashow", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -43,8 +44,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/spotashow", {
 
 // Routes
 // =============================================================
-app.use(require("./routes/api-routes.js"));
-require("./routes/html-routes.js")(app);
+// app.use(require("./routes/api-routes.js"));
+// require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 
 // Start our server so that it can begin listening to client requests.
