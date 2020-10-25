@@ -13,9 +13,9 @@ const bandsintownAPI = "c9c5bd4d98a900cc7acff614d4638962"
 //THE SEARCH BAR
 $("#search-button").click(function(){
     let artist = $("#search-artist").val();
-    $.post("/api/name", {
-        name: artist
-    })
+    // $.post("/api/name", {
+    //     name: artist
+    // })
     // console.log(artist)
     //This Hides the Description of our website
     //so what the user searches appears at the top

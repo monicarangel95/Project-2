@@ -3,18 +3,18 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const eventsSchema = new Schema({
-  name: {
-    type: String,
-    // trim: true,
-    required: "Enter a name for transaction"
-  },
   location: {
-    type: String,
-    required: "Enter an amount"
+    type: String
   },
   date: {
     type: String,
-    // default: Date.now
+  },
+  url: {
+    type: String,
+  },
+  name: {
+    type: String,
+    // trim: true,
   }
 });
 

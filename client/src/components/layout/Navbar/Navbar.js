@@ -14,6 +14,7 @@ export class Navbar extends Component {
                         <ul className="right hide-on-med-and-down">
                             <li><Link className="waves-effect" href to="/">Home</Link></li>
                             <li><Link className="waves-effect" href to="/events">Events</Link></li>
+                            <li><Link className="waves-effect" href to="/login">Login</Link></li>
                         </ul>
                     </div>
                 </nav>

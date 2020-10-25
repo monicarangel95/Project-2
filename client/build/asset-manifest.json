@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4cc6fc02.chunk.css",
+    "main.js": "/static/js/main.46433f0f.chunk.js",
+    "main.js.map": "/static/js/main.46433f0f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/css/2.9a9a1f6f.chunk.css": "/static/css/2.9a9a1f6f.chunk.css",
+    "static/js/2.07aedea6.chunk.js": "/static/js/2.07aedea6.chunk.js",
+    "static/js/2.07aedea6.chunk.js.map": "/static/js/2.07aedea6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.0727c4055b729a99c15ee0bc461336c5.js": "/precache-manifest.0727c4055b729a99c15ee0bc461336c5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.9a9a1f6f.chunk.css.map": "/static/css/2.9a9a1f6f.chunk.css.map",
+    "static/css/main.4cc6fc02.chunk.css.map": "/static/css/main.4cc6fc02.chunk.css.map",
+    "static/js/2.07aedea6.chunk.js.LICENSE.txt": "/static/js/2.07aedea6.chunk.js.LICENSE.txt",
+    "static/media/artist.jpg": "/static/media/artist.b5c25cac.jpg",
+    "static/media/Header.css": "/static/media/concert-cropped.ac5982a7.jpg",
+    "static/media/events.jpg": "/static/media/events.b4626146.jpg",
+    "static/media/music.jpg": "/static/media/music.b8b28f46.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/css/2.9a9a1f6f.chunk.css",
+    "static/js/2.07aedea6.chunk.js",
+    "static/css/main.4cc6fc02.chunk.css",
+    "static/js/main.46433f0f.chunk.js"
+  ]
+}

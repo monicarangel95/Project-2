@@ -18,12 +18,13 @@ export class SideNav extends Component {
                     <div className="background">
                         <img src={artist} alt="Artist on Stage" className="responsive-img"/>
                     </div>
-                        <span className="white-text center name"style={{marginTop: '0', fontSize: "20px"}}>Spot-A-Show</span>
+                        <span className="white-text center name"style={{fontSize: "20px"}}>Spot-A-Show</span>
                     </div>
                 </li>
                     <li><div className="divider"></div></li>
-                    <li><Link className="waves-effect" href to="/">Home</Link></li>
-                    <li><Link className="waves-effect" href to="/events">Events</Link></li>
+                    <li><Link className="waves-effect" to="/">Home</Link></li>
+                    <li><Link className="waves-effect" to="/events">Events</Link></li>
+                    <li><Link className="waves-effect" to="/login">Login</Link></li>
             </ul>
         )
     }
