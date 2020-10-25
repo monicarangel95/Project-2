@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-function Login(){
+function Login() {
     return(
     <div>
     <center>
@@ -13,21 +13,21 @@ function Login(){
       <div className="container">
         <div className="z-depth-1 grey lighten-4 row" style={{display: "inline-block", padding: "0px 48px 0px 48px", border: "1px solid #EEE"}}>
           <form className="col s12" method="post">
-            <div className='row'>
+            {/* <div className='row'>
               <div className='col s12'>
               </div>
-            </div>
+            </div> */}
             <div className='row'>
               <div className='input-field col s12'>
                 <input className='validate' type='email' name='email' id='email' />
-                <label for='email'>Enter your email</label>
+                <label htmlFor='email'>Enter your email</label>
               </div>
             </div>
 
             <div className='row'>
               <div className='input-field col s12'>
                 <input className='validate' type='password' name='password' id='password' />
-                <label for='password'>Enter your password</label>
+                <label htmlFor='password'>Enter your password</label>
               </div>
             </div>
 
@@ -40,9 +40,11 @@ function Login(){
           </form>
         </div>
       </div>
+
       <div className="section"></div>
-      <Link className="waves-effect" href to="/signup">Sign Up!</Link>
+      <Link className="waves-effect" to="/signup">Haven't made an account? Sign up here!</Link>
       <div className="section"></div>
+      
     </center>
     </div> 
     )

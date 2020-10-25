@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 // import "./SavedEvent.css"
-// import API from "../../../utils/API.js"
 
 function SavedEvent({ location, date, url, name }) {
 
@@ -8,7 +7,7 @@ function SavedEvent({ location, date, url, name }) {
         <section id="events-searched">
             <div className="container">
                 <div id="events-area" className="row">
-                    <div className="col s12 m12 l10 push-l1 xl10 push-xl1">
+                    <div className="col s12 m12 l10 push-l1 xl8 push-xl2">
                         <div className="card blue-grey darken-1">
                             <div className="card-image">
                                 <button className="btn-floating waves-effect waves-light right"
@@ -22,9 +21,15 @@ function SavedEvent({ location, date, url, name }) {
                                 </button>
                             </div>
                             <div className="card-content white-text">
-                            <span className="card-title" style={{ fontSize: "30px", fontWeight: "bold"}}>{name}</span>
-                                <p style={{ fontSize: "16px"}}>Location: {location}</p>
-                                <p style={{ fontSize: "16px"}}>Date: {date}</p>
+                            <span className="card-title" style={{ fontSize: "30px", fontWeight: "600"}}>{name}</span>
+                                <p style={{ fontSize: "16px"}}>
+                                    <span style={{ textDecorationLine: "underline"}}>Location</span>
+                                    : {location}
+                                </p>
+                                <p style={{ fontSize: "16px"}}>
+                                    <span style={{ textDecorationLine: "underline"}}>Date</span>
+                                    : {date}
+                                </p>
                             </div>
                         </div>
                     </div>

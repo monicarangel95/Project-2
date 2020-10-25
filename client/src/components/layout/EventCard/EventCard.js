@@ -1,13 +1,23 @@
 import React from 'react'
 
 function EventCard({length}) {
+    // console.log({length})
+    // console.log({length}.length)
 
     return (
-        <section id="events-searched">
+        <div>
+        {{length}.length == 0 ? (
             <div className="container">
-            <h2>Events: {length}</h2>
+                <h2 style={{paddingLeft: "20%"}}>No Upcoming Events Available</h2>
             </div>
-        </section>        
+        ) : (
+            <div id="events-searched">
+                <div className="container">
+                    <h2 style={{paddingLeft: "10%"}}>Events: {length}</h2>
+                </div>
+            </div>   
+        )}    
+        </div>  
     )
 }
 

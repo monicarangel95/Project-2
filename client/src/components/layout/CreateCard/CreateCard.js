@@ -24,7 +24,7 @@ function CreateCard({ location, date, url, name }) {
         <section id="events-searched">
             <div className="container">
                 <div id="events-area" className="row">
-                    <div className="col s12 m12 l10 push-l1 xl10 push-xl1">
+                    <div className="col s12 m12 l10 push-l1 xl8 push-xl2">
                         <div className="card blue-grey darken-1">
                             <div className="card-image">
                                 <button className="btn-floating waves-effect waves-light red right"
