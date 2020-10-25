@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "../components/layout/Search/Search.js";
 import Grid from "../components/layout/Grid/Grid.js";
 import Header from "../components/layout/Header/Header.js";
@@ -26,6 +26,10 @@ function Home() {
     })
 
     const [eventData, setEventData] = useState([])
+
+    useEffect(() => {
+        
+    }, [])
 
     const handleInputChange = event => {
         event.preventDefault();
@@ -107,7 +111,7 @@ function Home() {
                         id={event.id}
                         location={event.venue.location}
                         date={new Date(Date.parse(event.datetime)).toString()}
-                        url={event.offers[0].url}
+                        url={event.url}
                         name={artistData.name}
                     />
                 })

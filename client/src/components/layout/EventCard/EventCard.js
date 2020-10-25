@@ -6,7 +6,7 @@ function EventCard({length}) {
 
     return (
         <div>
-        {{length}.length == 0 ? (
+        {{length}.length === 0 ? (
             <div className="container">
                 <h2 style={{paddingLeft: "20%"}}>No Upcoming Events Available</h2>
             </div>
