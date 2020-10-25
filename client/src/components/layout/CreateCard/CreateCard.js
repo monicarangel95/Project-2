@@ -1,29 +1,36 @@
 import React from 'react'
 import "./CreateCard.css"
-import API from "../../../utils/API.js"
 
-function CreateCard({ location, date, url }) {
-    const locationResult = {location}.location
-    const dateResult = {date}.date
-
-    const saveThis = () => {
-        API.saveEvent({
-            date: dateResult.date,
-            location: locationResult.location
-        })
-        // console.log(locationResult);
-        // console.log(dateResult);
+function CreateCard({ location, date, url, name }) {
+    // Post request to save to the back end
+    const saveThis = ({ location, date, url, name }) => {
+        fetch("/savedEvents", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                location: location,
+                date: date,
+                url: url,
+                name: name
+            })
+        }).then(res => {
+            return res.json();
+        });
     }
 
     return (
         <section id="events-searched">
             <div className="container">
                 <div id="events-area" className="row">
-                    <div className="col s12 m12 l10 push-l1 xl8">
+                    <div className="col s12 m12 l10 push-l1 xl10 push-xl1">
                         <div className="card blue-grey darken-1">
                             <div className="card-image">
-                                <button className="btn-floating waves-effect waves-light red right" id="0"
-                                    onClick={saveThis}
+                                <button className="btn-floating waves-effect waves-light red right"
+                                    onClick={() => {
+                                        saveThis({ location, date, url, name });
+                                    }}
                                     style={{ marginRight: "10px", marginTop: "10px" }}>
                                     <i className="material-icons">add</i>
                                 </button>
@@ -38,8 +45,8 @@ function CreateCard({ location, date, url }) {
                                 </button>
                             </div>
                             <div className="card-content white-text">
-                            <span className="card-title" id="location-0" style={{ fontSize: "30px"}}>{location}</span>
-                                <p id="date-0" style={{ fontSize: "16px"}}>{date}</p>
+                            <span className="card-title" style={{ fontSize: "30px"}}>{location}</span>
+                                <p style={{ fontSize: "16px"}}>{date}</p>
                             </div>
                         </div>
                     </div>

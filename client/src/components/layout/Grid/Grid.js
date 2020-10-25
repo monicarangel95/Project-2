@@ -20,7 +20,7 @@ function Grid() {
                 </div>
                 {/* Look for upcoming events */}
                 <div className="row">
-                    <div className="col s12 m6 l4 push-l7 xl4 push-xl7">
+                    <div className="col s12 m6 l4 push-l7 xl4 push-xl8">
                         <img src={events} alt="Concert Event" className="responsive-img z-depth-2" />
                     </div>
                     <div className="col s12 m6 l6 pull-l4 offset-l1">

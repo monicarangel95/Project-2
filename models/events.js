@@ -8,7 +8,9 @@ const eventsSchema = new Schema({
   },
   date: {
     type: String,
-    // default: Date.now
+  },
+  url: {
+    type: String,
   },
   name: {
     type: String,

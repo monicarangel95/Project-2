@@ -12,7 +12,7 @@ const bandsintownAPI = "c9c5bd4d98a900cc7acff614d4638962"
 //GETTING THE SEARCHED ARTIST FROM
 //THE SEARCH BAR
 $("#search-button").click(function(){
-    // let artist = $("#search-artist").val();
+    let artist = $("#search-artist").val();
     // $.post("/api/name", {
     //     name: artist
     // })

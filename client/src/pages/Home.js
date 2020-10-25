@@ -101,15 +101,17 @@ function Home() {
             {!eventData.length ? (
                 <br></br>
             ) : (
-                    eventData.map(event => {
-                        return <CreateCard
-                            key={event.id}
-                            date={new Date(Date.parse(event.datetime)).toString()}
-                            location={event.venue.location}
-                            url={event.offers[0].url}
-                        />
-                    })
-                )}
+                eventData.map(event => {
+                    return <CreateCard
+                        key={event.id}
+                        id={event.id}
+                        location={event.venue.location}
+                        date={new Date(Date.parse(event.datetime)).toString()}
+                        url={event.offers[0].url}
+                        name={artistData.name}
+                    />
+                })
+            )}
         </div>
     );
 }
