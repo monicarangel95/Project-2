@@ -30,9 +30,9 @@ Open terminal, change to this project's folder, and type 'node server.js'
 
 In order to search something, the user types the artist's name into the search bar and presses search. Data of the artist's genre, top songs, and event times and locations population their respective area. If the user was to search another artist, they can repeat the search request and new information will be displayed.
 
-## Link to Application
+## Heroku Deployment Link
 
-[damp-eyrie-26652.herokuapp.com](https://damp-eyrie-26652.herokuapp.com/)
+[spotashow.herokuapp.com/](https://spotashow.herokuapp.com/)
 
 ## Authors
 
