@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Spot-A-Show 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-3.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/monicarangel95/Project-2#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -19,20 +19,20 @@
 ## Install
 
 ```sh
-npm install express sql2 sequelize
+npm install
 ```
 
 ## Usage
 
 ```sh
-Open terminal, change to this project's folder, and type 'node server.js'
+Open terminal, change to this project's folder, and type 'npm start'
 ```
 
 In order to search something, the user types the artist's name into the search bar and presses search. Data of the artist's genre, top songs, and event times and locations population their respective area. If the user was to search another artist, they can repeat the search request and new information will be displayed.
 
 ## Heroku Deployment Link
 
-[spotashow.herokuapp.com/](https://spotashow.herokuapp.com/)
+[spotashow-v3.herokuapp.com/](https://spotashow-v3.herokuapp.com/)
 
 ## Authors
 
